@@ -1,0 +1,210 @@
+.main_container{
+    display: flex;
+    width: 100%;
+}
+
+
+input{
+    margin: 0 35px;
+    width: 504px;
+    margin-top: 10px;
+    height: 60px;
+    border: 2px solid #D9D9D9;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+input::placeholder{
+    font-size: 16px;
+}
+
+.box_btn{
+    border: none;
+    font-size: 18px;
+    color: #FFFF;
+    margin: 16px 35px;
+    width: 515px;
+    margin-top: 20px;
+    height: 60px;
+    background: #252525;
+    border-radius: 20px;
+}
+
+.box_btn:hover{
+    color:#A384FF;
+    cursor: pointer;
+}
+
+.search_icon{
+    position:absolute;
+    padding: 20px 48px;
+}
+
+.container_box{
+    padding: 15px;
+}
+
+.todo{
+    width: 290px;
+    height: 390px;
+    padding: 20px;
+    background: #252525;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 8px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 28px;
+    margin-bottom: 20px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    margin: 15px;
+}
+
+
+.todo_img{
+    width: 290px;
+    height: 200px;
+}
+
+
+.todo_firstName, .todo_lastName, .todo_age, .todo_group, .todo_grade{
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    margin: 5px;
+}
+
+.todo_buttons{
+    display: flex;
+    justify-content:flex-end;
+}
+
+svg{
+    background-color: #A384FF;
+    border-radius: 45%;
+    margin: 5px;
+}
+
+.box_about{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    input{
+        width: 435px
+    }
+
+    .box_btn{
+        width: 455px;
+    }
+    .todo{
+        width: 220px;
+        padding: 8px;
+        height: 320px;
+    }
+    
+    .todo_img{
+        width: 220px;
+        height: 170px;
+    }
+
+    .todo_firstName, .todo_lastName, .todo_age, .todo_group, .todo_grade{
+        font-size: 14px;
+        margin: 2px;
+    }
+
+    svg{
+        width: 18px !important;
+        height: 22px !important;  
+    }
+
+    .search_icon{
+        position: absolute;
+        padding: 15px 54px;
+        width: 15px;
+        height: 15px;
+    }
+    }
+
+
+    @media screen and (max-width: 425px) {
+        input{
+            width: 250px;
+            margin: 5px;
+            font-size: 14px;
+        }
+    
+        .box_btn{
+            width: 268px;
+            margin: 2px;
+            font-size: 14px;
+        }
+        .todo{
+            width: 220px;
+            padding: 8px;
+            height: 320px;
+        }
+        
+        .todo_img{
+            width: 220px;
+            height: 170px;
+        }
+    
+        .todo_firstName, .todo_lastName, .todo_age, .todo_group, .todo_grade{
+            font-size: 14px;
+            margin: 2px;
+        }
+    
+        svg{
+            width: 18px !important;
+            height: 22px !important;  
+        }
+        .search_icon{
+            position: absolute;
+            padding: 10px 28px;
+            width: 15px;
+            height: 15px;
+        }
+        }
+
+        @media screen and (max-width: 375px) {
+            input{
+                width: 150px;
+                height:  32px;
+            }
+        
+            .box_btn{
+                width: 168px;
+                height:  32px;
+            }
+            .todo{
+                width: 140px;
+                padding: 8px;
+                height: 200px;
+            }
+            
+            .todo_img{
+                width: 140px;
+                height: 90px;
+            }
+        
+            .todo_firstName, .todo_lastName, .todo_age, .todo_group, .todo_grade{
+                font-size: 12px;
+                margin: 2px;
+            }
+        
+            svg{
+                width: 12px !important;
+                height: 18px !important;  
+            }
+            .search_icon{
+                position: absolute;
+                padding: 10px 24px;
+                width: 15px;
+                height: 15px;
+            
+            }
+            }

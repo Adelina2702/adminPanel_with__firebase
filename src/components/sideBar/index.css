@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+}
+
+.side_bar{
+    top:0;
+    height: 100vh;
+    background-color: #252525;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    padding: 32px;
+    position: sticky;
+}
+
+.top_section{
+    display: flex;
+    align-items: center;
+    padding: 10px 80px;
+}
+
+.logo{
+    margin-top: -20px;
+}
+
+
+.link{
+    display: flex;
+    color: #000;
+    padding: 20px 25px;
+    gap: 10px;
+    margin-top: 20px;
+    transition: all 0.5s;
+    font-size: 18px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    margin-bottom: 60px;
+}
+
+.link_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.link:hover{
+    background-color: #A384FF;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .link{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .logo{
+        width: 25px;
+        height: 25px;
+        margin-left: 25px;
+    }
+    .side_bar{
+        width: 150px;
+        top: 0;
+    }
+
+    .top_section{
+        padding: 5px 12px;
+    }
+
+    .link{
+        padding: 6px 15px;
+        font-size: 10px;
+    }
+
+    .icon{
+        width: 12px;
+        height: 12px;
+    }
+    }

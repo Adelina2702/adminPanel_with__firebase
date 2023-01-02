@@ -1,0 +1,163 @@
+.main{
+    display: flex;
+}
+
+
+.main_about{
+    display: flex;
+    flex-direction: column;
+}
+
+.search{
+    width: 525px;
+    height: 56px;
+    left: 405px;
+    top: 24px;
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-radius: 28px;
+    padding: 18px 50px;
+    font-size: 20px;
+    display: flex;
+}
+
+.search_img{
+    position:absolute;
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.main_todo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .search{
+        width: 358px;
+        height: 42px;
+    }
+
+    .search_img{
+        padding: 20px 45px;
+    }
+    .main_todo{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .todo{
+        width: 200px;
+        padding: 8px;
+        height: 280px;
+    }
+    
+    .todo_img{
+        width: 200px;
+        height: 170px;
+    }
+
+    .todo_firstName, .todo_lastName, .todo_age, .todo_group, .todo_grade{
+        font-size: 13px !important;
+        margin: 2px !important;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .search{
+        width: 228px;
+        height: 32px;
+        padding: 12px 50px;
+    }
+
+    .search_img{
+        padding: 22px 45px;
+        width: 15px;
+        height: 15px;
+    }
+    .todo{
+        width: 140px;
+        padding: 8px;
+        height: 160px;
+    }
+    
+    .todo_img{
+        width: 140px;
+        height: 90px;
+    }
+
+    .todo_firstName, .todo_lastName, .todo_age, .todo_group, .todo_grade{
+        font-size: 9px !important;
+        margin: 2px !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .search{
+        width: 148px;
+        height: 32px;
+        margin: 10px;
+        padding: 10px 40px;
+    }
+
+    .search_img{
+        padding: 18px 25px;
+        width: 15px;
+        height: 15px;
+    }
+    .todo{
+        width: 113px;
+        padding: 8px;
+        height: 160px;
+    }
+    
+    .todo_img{
+        width: 113px;
+        height: 80px;
+    }
+
+    .todo_firstName, .todo_lastName, .todo_age, .todo_group, .todo_grade{
+        font-size: 8px !important;
+        margin: 2px !important;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .search{
+        width: 148px;
+        height: 32px;
+        margin: 10px;
+        padding: 10px 40px;
+    }
+
+    .search_img{
+        padding: 18px 25px;
+        width: 15px;
+        height: 15px;
+    }
+    .todo{
+        width: 113px;
+        padding: 10px;
+        height: 160px;
+    }
+    
+    .todo_img{
+        width: 113px;
+        height: 80px;
+    }
+
+    .todo_firstName, .todo_lastName, .todo_age, .todo_group, .todo_grade{
+        font-size: 8px !important;
+        margin: 2px !important;
+    }
+}
