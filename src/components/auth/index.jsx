@@ -59,7 +59,7 @@ const Auth = () => {
 
         createUserWithEmailAndPassword(auth, registrationInfo.email, registrationInfo.password)
         .then(() => {
-            navigate('/')
+            navigate('/homepage')
         })
         .catch((error) => {
             alert(error);
