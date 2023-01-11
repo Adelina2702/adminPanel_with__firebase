@@ -269,14 +269,14 @@ onChange={e => setSearch(e.target.value)}
           <option value="name">Name</option>
           <option value="age">Age</option>
           <option value="group">Group</option>
-          <option value="grade">Grade</option>
+          <option value="grade">Class</option>
       </select></p> 
           </div>
           </div>
         
 <div className="box_about">
       {todos.
-      filter((todo) => todo.firstName.toLowerCase().includes(search)|| todo.lastName.includes(search)||
+      filter((todo) => todo.firstName.includes(search)|| todo.lastName.toLowerCase().includes(search)||
                     todo.age.includes(search) ||
                     todo.group.includes(search) ||
                     todo.grade.includes(search)).
