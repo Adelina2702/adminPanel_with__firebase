@@ -140,7 +140,7 @@ const sortAsc = (a, b, key) => {
                         <h2 className="todo_lastName">Last name: {todo.lastName}</h2>
                         <p className="todo_age">Age: {todo.age}</p>
                         <p className="todo_group">Group: {todo.group}</p>
-                        <p className="todo_grade">Class: {todo.grade}</p>            
+                        <p className="todo_grade">Grade: {todo.grade}</p>            
                         </div>
                         )) : <div className='empty'>
                         <h1>Class is empty</h1>

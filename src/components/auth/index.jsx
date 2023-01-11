@@ -172,7 +172,7 @@ const Auth = () => {
                     Sign In
                 </button>
                 <div className="box_item__google-btn">
-                    <GoogleButton onChange={handleLoginWithGoogle} />
+                    <GoogleButton onCLick={handleLoginWithGoogle} />
                 </div>
                 <button onClick={() => setIsRegistering(true)} className='link_register'>Need an Account?</button>
                 </div>
