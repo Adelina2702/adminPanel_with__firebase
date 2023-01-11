@@ -78,3 +78,10 @@
     margin: 0 auto;
     font-size: 18px;
 }
+
+
+.box_item__google-btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}

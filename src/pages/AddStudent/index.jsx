@@ -8,7 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { auth, db } from "../../firebase/firebase";
 import { useForm } from "react-hook-form"
 import SideBar from '../../components/sideBar';
-import Search from "../../img/search.svg"
+import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material";
 
 const initialState = {
     image: '',
@@ -26,7 +26,15 @@ export default function Homepage() {
   const [isEdit, setIsEdit] = useState(false);
   const [tempUidd, setTempUidd] = useState("");
   const [search, setSearch] = useState('');
+  const [val, setVal] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if(val !== ''){
+      let newArr = sortMethods(val)
+      setTodos(newArr)
+    }
+  },[val])
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -46,6 +54,7 @@ export default function Homepage() {
       }
     });
   }, []);
+
 
   const {register, reset, handleSubmit} = useForm()
 
@@ -99,6 +108,39 @@ export default function Homepage() {
     remove(ref(db, `/${auth.currentUser.uid}/${uid}`));
   };
 
+  
+  // sort
+  const sortAsc = (a, b, key) => {
+    const obj1 = a[key];
+    const obj2 = b[key];
+  
+    if (obj1 < obj2) {
+      return -1;
+    }
+    if (obj1 > obj2) {
+      return 1;
+    }
+    return 0;
+  }
+
+
+  const sortMethods = (value) => {
+    let newTodos = [...todos]
+    if(value === 'name'){
+    return newTodos?.sort((a,b) => sortAsc(a, b, 'firstName'))
+    }
+    if(value === 'age'){
+      return newTodos?.sort((a,b) => a.age -  b.age)
+  } 
+  if(value === 'group'){
+    return newTodos?.sort((a,b) => sortAsc(a, b, 'group'))
+} 
+  if(value === 'grade'){
+    return newTodos?.sort((a,b) => a.grade - b.grade)
+} 
+}
+
+
   return (
     <div className="main_container">
           <SideBar/>
@@ -132,7 +174,7 @@ export default function Homepage() {
             </div>
             <div>
             <input 
-                type="text" 
+                type="number" 
                 placeholder='Age' 
                 {...register('age')}
                 value={age}
@@ -176,20 +218,69 @@ export default function Homepage() {
             </button>
         </div>
       )}
-
-<form className="form">
-        <img className="search_icon" src={Search} alt="" />
-        <input className="search" type="search" placeholder="Поиск"
-        onChange={e => setSearch(e.target.value)}
+<div className="formAndSort">
+<form className="form"
+onChange={e => setSearch(e.target.value)}
+>
+<p className='content_filter'>Filter:</p>
+        <input className="search" type="search" placeholder="Search by name"
         />
+        <input className="search" type="search" placeholder="Search by last name"
+        />
+        <input className="search" type="search" placeholder="Search by age"
+        />
+        <FormControl>
+          <RadioGroup
+                            aria-label="gender"
+                            onChange={e => setSearch(e.target.value)}
+                            >
+                            <div className="filter">
+                            <p className='filter_title'>Group :  </p>
+                            <FormControlLabel
+                                value="A"
+                                control={<Radio/>}
+                                label="A"
+                            />
+                            <FormControlLabel
+                                value="B"
+                                control={<Radio/>}
+                                label="B"
+                            />
+                            <FormControlLabel
+                                value="C"
+                                control={<Radio/>}
+                                label="C"
+                            />
+                            <FormControlLabel
+                                    value="D"
+                                control={<Radio />}
+                                    label="D"
+                            />
+                            </div>
+                        </RadioGroup>
+                        </FormControl>
         </form>
-
+<div className="sort">
+      <p className="sort_title">Sort by : <select defaultValue={'all'} {...register("Sort By") }
+          onChange={(e) =>   { let newArr = sortMethods(e.target.value)
+            setTodos(newArr)}}
+        >
+          <option value="all" disabled>All</option>
+          <option value="name">Name</option>
+          <option value="age">Age</option>
+          <option value="group">Group</option>
+          <option value="grade">Grade</option>
+      </select></p> 
+          </div>
+          </div>
         
 <div className="box_about">
-      {todos.filter((todo) => todo.firstName.toLowerCase().includes(search)|| todo.lastName.toLowerCase().includes(search)||
-                    todo.age.toLowerCase().includes(search) ||
-                    todo.group.toLowerCase().includes(search) ||
-                    todo.grade.toLowerCase().includes(search)).map((todo) => (
+      {todos.
+      filter((todo) => todo.firstName.toLowerCase().includes(search)|| todo.lastName.includes(search)||
+                    todo.age.includes(search) ||
+                    todo.group.includes(search) ||
+                    todo.grade.includes(search)).
+                    map((todo) => (
         <div className="todo">
           <img className="todo_img" src={todo.image}/>
           <h2 className="todo_firstName">First name: {todo.firstName}</h2>

@@ -9,25 +9,17 @@
 }
 
 .search{
-    width: 525px;
+    width: 425px;
     height: 56px;
     left: 405px;
     top: 24px;
+    padding: 5px 10px;
     background: #FFFFFF;
     border: 1px solid #BBBBBB;
     border-radius: 28px;
-    padding: 18px 50px;
     font-size: 20px;
     display: flex;
-}
-
-.search_img{
-    position:absolute;
-    padding: 28px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 2px 12px #A384FF;
 }
 
 .main_todo{
@@ -38,8 +30,48 @@
 .empty{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin: 0 auto;
+}
+
+.content_filter{
+    font-size: 20px;
+    font-weight: 400;
+    background: #A384FF;
+    color: #FFFFFF;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    width: 140px;
+    margin-left: 40px;
+}
+
+.filter_title{
+    font-size: 14px;
+    font-weight: 400;
+    background: #A384FF;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 12px 10px 10px 0px;
+}
+
+.sort_title{
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    background: #A384FF;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-left: 40px;
+}
+
+select{
+    background: #FFFFFF;
+    color: #A384FF;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 5px;
 }
 
 @media screen and (max-width: 768px) {
@@ -48,12 +80,10 @@
         height: 42px;
     }
 
-    .search_img{
-        padding: 20px 45px;
-    }
     .main_todo{
         display: flex;
         flex-wrap: wrap;
+        margin-left: 20px;
     }
 
     .todo{
@@ -77,14 +107,29 @@
     .search{
         width: 228px;
         height: 32px;
-        padding: 12px 50px;
+        margin-left: 30px;
     }
 
-    .search_img{
-        padding: 22px 45px;
-        width: 15px;
-        height: 15px;
+    .content_filter{
+        font-size: 14px;
+        width: 80px;
+        letter-spacing: 5px;
     }
+
+    .filter_title{
+        font-size: 11px;
+        margin: 15px 10px 12px 0px;
+    }
+
+    .sort_title{
+        font-size: 11px;
+    }
+
+    select{
+        font-size: 12px;
+        padding: 0;
+    }
+
     .todo{
         width: 140px;
         padding: 8px;
@@ -106,15 +151,12 @@
     .search{
         width: 148px;
         height: 32px;
-        margin: 10px;
-        padding: 10px 40px;
     }
 
-    .search_img{
-        padding: 18px 25px;
-        width: 15px;
-        height: 15px;
+    .search::placeholder{
+        font-size: 12px;
     }
+
     .todo{
         width: 113px;
         padding: 8px;
@@ -133,18 +175,6 @@
 }
 
 @media screen and (max-width: 320px) {
-    .search{
-        width: 148px;
-        height: 32px;
-        margin: 10px;
-        padding: 10px 40px;
-    }
-
-    .search_img{
-        padding: 18px 25px;
-        width: 15px;
-        height: 15px;
-    }
     .todo{
         width: 113px;
         padding: 10px;

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import background from "../../img/background.jpg";
 import './index.css';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../../firebase/firebase' 
-import { Link } from 'react-router-dom'
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { auth, provider } from '../../firebase/firebase' 
+import {GoogleButton}  from 'react-google-button'
 import { useNavigate } from 'react-router-dom'
 
 const Auth = () => {
@@ -18,6 +18,9 @@ const Auth = () => {
     })        
 
     const navigate = useNavigate()
+
+    const handleLoginWithGoogle = () => signInWithPopup(auth, provider)
+
 
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
@@ -168,6 +171,9 @@ const Auth = () => {
                 <button onClick={handleSignIn} className="box_item__btn">
                     Sign In
                 </button>
+                <div className="box_item__google-btn">
+                    <GoogleButton onClick={handleLoginWithGoogle} />
+                </div>
                 <button onClick={() => setIsRegistering(true)} className='link_register'>Need an Account?</button>
                 </div>
                 </>
