@@ -1,12 +1,8 @@
-.background{
+.container{
     width: 100%;
     height: 100vh;
     position: absolute;
-}
-
-.container{
-    width: 100%;
-    position: absolute;
+    background-color: #A384FF ;
 }
 
 .box{
@@ -61,7 +57,7 @@
     background-color: #fff;
 } */
 .box_item__btn:hover{
-    color:#D9D9D9;
+    background-color: #A384FF;
     cursor: pointer;
 }
 
@@ -79,9 +75,88 @@
     font-size: 18px;
 }
 
+.link_register:hover{
+    color: #A384FF
+}
 
 .box_item__google-btn{
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 768px) {
+
+    .txt{
+        font-size: 24px;
+    }
+
+    .box{
+    left: 15%;
+    width: 500px;
+    height: 420px;
+    }
+
+    .box_item{
+    width: 410px;
+    height: 40px;
+    }
+
+    .box_item__btn{
+        font-size: 16px;
+        width: 425px;
+        height: 40px;
+    }
+
+    .link_register{
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+
+    .txt {
+        font-size: 20px;
+    }
+
+    .box {
+        width: 300px;
+        height: 380px;
+}
+
+.box_item {
+    width: 220px;
+    height: 28px;
+    margin-top: 15px;
+}
+
+.box_item__btn {
+    font-size: 14px;
+    width: 235px;
+    height: 28px;
+}
+
+.link_register {
+    font-size: 14px;
+}
+
+}
+
+@media screen and (max-width: 375px) {
+.box {
+    left: 10%;
+}
+}
+
+@media screen and (max-width: 320px) {
+.txt {
+        font-size: 18px;
+}
+
+.box {
+    width: 260px;
+    height: 365px;
+}
+}
+

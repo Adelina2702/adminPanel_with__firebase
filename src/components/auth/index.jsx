@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import background from "../../img/background.jpg";
 import './index.css';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { auth, provider } from '../../firebase/firebase' 
@@ -69,7 +68,6 @@ const Auth = () => {
 
     return (
         <div className='container'>
-            <img className='background' src={background} alt="" />
                 <div autoComplete="off" className="box">
                 {isRegistering ? (
                     <>
